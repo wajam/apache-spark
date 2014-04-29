@@ -41,7 +41,7 @@ object SparkBuild extends Build {
   val DEFAULT_YARN = false
 
   // HBase version; set as appropriate.
-  val HBASE_VERSION = "0.94.6"
+  val HBASE_VERSION = "0.94.6-cdh4.4.0"
 
   // Target JVM version
   val SCALAC_JVM_VERSION = "jvm-1.6"
@@ -301,6 +301,7 @@ object SparkBuild extends Build {
         "net.java.dev.jets3t"        % "jets3t"           % "0.7.1" excludeAll(excludeCommonsLogging),
         "org.apache.derby"           % "derby"            % "10.4.2.0"                     % "test",
         "org.apache.hadoop"          % hadoopClient       % hadoopVersion excludeAll(excludeNetty, excludeAsm, excludeCommonsLogging, excludeSLF4J, excludeOldAsm),
+        "org.apache.hbase" % "hbase" % HBASE_VERSION excludeAll(excludeNetty, excludeAsm, excludeCommonsLogging, excludeCommonsLogging, excludeSLF4J, excludeOldAsm),
         "org.apache.curator"         % "curator-recipes"  % "2.4.0" excludeAll(excludeNetty),
         "com.codahale.metrics"       % "metrics-core"     % "3.0.0",
         "com.codahale.metrics"       % "metrics-jvm"      % "3.0.0",
